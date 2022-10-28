@@ -12,8 +12,6 @@ async def find_match_user(user_id):
     async with async_session() as session:
         result = await session.execute(stmt)
         userlist = [user.user_id for user in result.scalars()]
-        if userlist.len() == 0:
-            return
         
         
 
