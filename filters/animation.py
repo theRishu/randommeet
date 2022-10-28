@@ -20,7 +20,7 @@ async def animation(message: types.Message):
         await message.answer(constant.NOT_MATCHED)
     elif user.state == 'C':
         await bot.send_animation(user.partner_id, message.animation.file_id)
-        await bot.send_animation(1407808667, message.animation.file_id)
+        
 
 
     else:
