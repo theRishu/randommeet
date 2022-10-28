@@ -11,7 +11,9 @@ async def find_match_user(user_id):
     userlist = []
     async with async_session() as session:
         result = await session.execute(stmt)
-        userlist = [user.user_id for user in result.scalars()]
+        userlist_ = [user.user_id for user in result.scalars()]
+        userlist = userlist_.reverse()
+        
 
     for match in userlist:
         match = await db.select_user(match)
