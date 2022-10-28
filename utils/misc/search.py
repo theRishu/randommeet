@@ -11,11 +11,13 @@ async def find_match_user(user_id):
     userlist = []
     async with async_session() as session:
         result = await session.execute(stmt)
-        userlist_ = [user.user_id for user in result.scalars()]
-        userlist = userlist_.reverse()
+        userlist = [user.user_id for user in result.scalars()]
+        if userlist.len() == 0:
+            return
+        
         
 
-    for match in userlist:
+    for match in userlist.reverse():
         match = await db.select_user(match)
         if user.gender == "M":
             if user.is_vip == True:
