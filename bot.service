@@ -1,0 +1,12 @@
+[Unit]
+Description=Bot Starter
+After=network.target
+
+[Service]
+Restart=always
+ExecStart=/bin/bash -c 'cd /home/root/randommeet && python3 app.py'
+
+
+
+[Install]
+WantedBy=default.target
