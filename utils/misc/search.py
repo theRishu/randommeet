@@ -15,7 +15,7 @@ async def find_match_user(user_id):
         
         
 
-    for match in userlist.reverse():
+    for match in userlist:
         match = await db.select_user(match)
         if user.gender == "M":
             if user.is_vip == True:
