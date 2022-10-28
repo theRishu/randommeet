@@ -29,15 +29,15 @@ async def broadcast(message: types.Message):
                 if user.state == "A":
                     await db.update_state(user.user_id, "E")
                     await bot.send_message(
-                        user.user_id, f"🤖 Bot ( Broadcast) :{ BROADCAST_TEXT}"
+                        user.user_id, f"🤖 Bot ( @RandomMode Broadcast) :{ BROADCAST_TEXT}"
                     )
                 elif user.state == "B" or "C":
                     await bot.send_message(
-                        user.user_id, f"🤖 Bot ( Broadcast) :{ BROADCAST_TEXT}"
+                        user.user_id, f"🤖 Bot ( @RandomMode Broadcast) :{ BROADCAST_TEXT}"
                     )
                 elif user.state == "D":
                     await bot.send_message(
-                        user.user_id, f"🤖 Bot ( Broadcast) :{ BROADCAST_TEXT}"
+                        user.user_id, f"🤖 Bot ( @RandomMode Broadcast) :{ BROADCAST_TEXT}"
                     )
                 elif user.state == "E":
                     await db.delete_user(user.user_id)
