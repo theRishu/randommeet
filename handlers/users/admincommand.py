@@ -55,3 +55,17 @@ async def ban(message: types.Message):
     await db.update_state(id, 'A')
     await bot.send_message(id, f'You got a second chance. Please use it correctly')
     await message.answer("Unbanned Successfully.")
+
+@dp.message_handler(Command("cp"))
+async def update_rate_by_admin(message: types.Message):
+    try:
+       id = int(message.text.split()[1])
+       desired_partner = int(message.text.split()[2])
+       partner = await db.select_user(desired_partner)
+       await db.update_after_leavechat(partner.partner_id, partner.user_id)
+       await bot.send_message(partner.partner_id, constant.PARTNER_LEAVED, reply_markup=keyboard_markup)
+       await db.update_after_match(desired_partner, id)
+
+      
+    except Exception as e:
+        await bot.answer(str(e))
