@@ -16,23 +16,24 @@ BNC = 'Close this TOD'
 STOP_SEARCHING = "Now, you are not searching anymore for users. Press /newchat if you change your mind."
 START_TEXT = "Hey! With me  you can chat with male and female all over the world.\nThe chat is fully safe and your identity is secret."
 YOU_ARE_BANNED = "You are banned from using this bot. \nIf you think there is any error contact @RandomMode_Bot"
-MATCHED = "You have been matched."
-NOT_MATCHED = "You are not in chat"
+MATCHED = "🎉 You found a partner. Have a nice chat.😊"
+NOT_MATCHED = "⚠️ You are not in chat ⚠️"
 IN_CHAT = "You are already in chat"
 NOT_REGISTERED = "You are not registered. Please send /start."
-USER_LEAVED = "You left the chat."
+USER_LEAVED = "Chat ended.\nType /newchat to start new one."
+PARTNER_LEAVED = "Your partner left the chat. 😞"
 WAIT_REACCEPT = "Please wait for partner to reaccept the chat"
 CANT_SEND_REACCEPT_REQUEST = "You are already in chat to send reaccept request you need to end this chat first."
 ALREADY_REACCEPT ="You are already looking for previous partner please wait."
 AlREADY_WAITING = "You are already searching for user please wait."
 LEFT_WAITING = """
 You left the chat. 
+
 =================
+🔍 Waiting for user...🤞"""
 
-Waiting for user...🔍"""
 
-PARTNER_LEAVED = "Your partner left the chat."
-WAITING = "Waiting for user...🔍"
+WAITING = "🔍 Waiting for user... 🤞"
 FEEDBACK = "Send me message at @RandomMode_Bot for feedback"
 NEWCHAT = "Press on below button to start newchat."
 JOINED_FROM_LINK = "Some one joined from your link."
