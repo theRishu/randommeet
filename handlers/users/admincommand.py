@@ -1,3 +1,37 @@
+import asyncio
+
+from aiogram.types.inline_keyboard import InlineKeyboardButton, InlineKeyboardMarkup
+from keyboards.inline.tod_markup import tod_markup
+from keyboards.inline.delete_profile_button import delete_profile_markup
+import random
+
+
+import constant
+from aiogram import types
+from aiogram.dispatcher.filters import Command
+from aiogram.dispatcher.filters.builtin import CommandHelp, CommandStart
+from aiogram.types import CallbackQuery, ContentType, Message, reply_keyboard
+from aiogram.types.message import ParseMode
+from aiogram.utils.exceptions import BotBlocked
+from keyboards.inline.help_button import back_keyboard, choice
+from keyboards.inline.newchat_button import NEWCHAT_BUTTON
+from keyboards.inline.setting_button.bts import bts_keyboard
+from keyboards.inline.setting_button.partner_gender import partgen_keyboard
+from keyboards.inline.setting_button.self_gender import gender_keyboard
+from keyboards.inline.setting_button.setting_choice import setting_choice
+from keyboards.inline.start_button import JOIN_BUTTON, keyboard_markup
+from keyboards.inline.in_chat import in_chat_markup
+from loader import bot, dp
+from sqlalchemy import select
+from utils.db_api.db import async_session
+from utils.db_api.models import User
+from utils.misc import db_commands as db
+from utils.misc import search
+from utils.tod.truth import truthlist
+from utils.tod.dare import darelist
+from data.config import BROADCAST_CHANNEL as BC
+
+
 @dp.message_handler(Command("ban"))
 async def ban(message: types.Message):
     id = int(message.text.split()[1])
