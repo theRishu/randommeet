@@ -80,9 +80,11 @@ async def newchat(message: types.Message):
                 match = await db.select_user(found_user)
                 await bot.send_message(
                     user_id,
-                    f"{constant.MATCHED}\nPartner Details\nRating: {match.rating}\nVIP user: {match.is_vip} \nGender: {match.gender}",
+                    f"{constant.MATCHED}\n\nPartner Details\nRating: {match.rating}\nVIP user: {match.is_vip} \nGender: {match.gender}",
                     reply_markup=in_chat_markup,
                 )
+                await bot.send_message(user.partner_id , "Hi")
+                await bot.send_message(
 
                 await db.update_after_match(user_id, found_user)
 
