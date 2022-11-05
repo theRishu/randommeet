@@ -14,7 +14,6 @@ from keyboards.inline.start_button import JOIN_BUTTON, keyboard_markup
 from keyboards.inline.help_button import back_keyboard, choice
 from keyboards.inline.stop_searching import stop_search
 from keyboards.inline.in_chat import in_chat_markup
-from keyboards.inline.lang_button import lang_btn
 
 from utils.misc import search
 from data.config import BROADCAST_CHANNEL as BC
