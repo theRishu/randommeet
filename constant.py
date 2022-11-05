@@ -33,7 +33,7 @@ You left the chat.
 
 WAITING = "<b>🔍 Waiting for user... 🤞</b>"
 FEEDBACK = "Send me message at @RandomMode_Bot for feedback"
-NEWCHAT = "<b> Press /newchat  or click on newchat button to start newchat.<b>"
+NEWCHAT = "<b> Press /newchat  or click on newchat button to start newchat.</b>"
 JOINED_FROM_LINK = "Some one joined from your link."
 DELETEPROFILETEXT = "You wanna delete your profile."
 SHARE_LINK = "Invite 3 people who had never started this bot and you will get V.I.P. benefits."
