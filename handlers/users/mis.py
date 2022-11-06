@@ -6,6 +6,7 @@ spc -
 rate -
 getlink - 
 shareprofile -
+makevio
 
 """
 from aiogram import types
@@ -114,3 +115,12 @@ async def myratings(message: types.Message):
         for user in result.scalars():
             userlist.append(user.user_id)
     await message.answer(str(userlist))
+    
+    
+    
+@dp.message_handler(commands="mv")
+async def update_rate_by_admin(message: types.Message):
+    id = int(message.text.split()[1])
+    await db.makevip(id)
+    await bot.send_message(id, "You are vip now.")
+    await message.answer("Done Successfully.")
