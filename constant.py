@@ -17,12 +17,10 @@ WELCOME = "<b> Welcome to @RandomMode </b>"
 STOP_SEARCHING = "Now, you are not searching anymore for users. Press /newchat if you change your mind."
 START_TEXT = """
 Hey! With me  you can chat with male and female all over the world.\n
-
 <b>Commands</b>
 /newchat - to start chat.
 /leavechat - to end chat.
 /setings - to settings.
-
 Please dont spam and be nice with other users. If you have any questions regarding you can contact at @randommode_bot.
 """
 YOU_ARE_BANNED = "You are banned from using this bot. \nIf you think there is any error contact @RandomMode_Bot"
