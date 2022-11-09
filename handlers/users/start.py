@@ -43,7 +43,7 @@ async def bot_start(message: types.Message):
             else:
                 await db.add_user(user_id)
                 await message.answer(constant.WELCOME, reply_markup=keyboard_markup)
-                await message.answer(constant.START_TEXT, reply_markup=JOIN_BUTTON)
+                await message.answer(constant.START_TEXT,)
 
                
                 await bot.send_message(
@@ -51,11 +51,11 @@ async def bot_start(message: types.Message):
                 )
         else:
             if result.state == "A":
-                await message.answer(constant.START_TEXT, reply_markup=JOIN_BUTTON)
+                await message.answer(constant.START_TEXT, )
             if result.state == "B":
-                await message.answer(constant.START_TEXT, reply_markup=JOIN_BUTTON)
+                await message.answer(constant.START_TEXT, )
             if result.state == "C":
-                await message.answer(constant.START_TEXT, reply_markup=JOIN_BUTTON)
+                await message.answer(constant.START_TEXT, )
             if result.state == "D":
                 await message.answer(constant.YOU_ARE_BANNED)
 
