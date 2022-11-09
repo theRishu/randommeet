@@ -9,7 +9,7 @@ ADMINS = env.list("ADMINS")  # Тут у нас будет список из а�
 IP = env.str("ip")  # Тоже str, но для айпи адреса хоста
 
 DATABASE_URL = "postgresql+asyncpg://postgres:1234@localhost/postgres"
-TG_CHANNEL = "t.me/stupid"
+TG_CHANNEL = "t.me/RandomMode"
 
 BROADCAST_CHANNEL = "-1001864616211"
 
