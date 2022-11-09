@@ -21,7 +21,7 @@ Hey! With me  you can chat with male and female all over the world.\n
 /newchat - to start chat.
 /leavechat - to end chat.
 /setings - to settings.
-Please dont spam and be nice with other users. If you have any questions regarding bot you can contact at @randommode_bot.
+Please dont spam and be nice with other users. If you have any doubt contact @randommode_bot.
 """
 YOU_ARE_BANNED = "You are banned from using this bot. \nIf you think there is any error contact @RandomMode_Bot"
 MATCHED = "<b>🎉You found a partner.</b>\n"
