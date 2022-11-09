@@ -13,12 +13,23 @@ DPYES = 'Delete my profile'
 DPNO = 'Dont delete my profile'
 BNC = 'Close this TOD'
 
+WELCOME = "<b> Welcome to @RandomMode </b>"
 STOP_SEARCHING = "Now, you are not searching anymore for users. Press /newchat if you change your mind."
-START_TEXT = "Hey! With me  you can chat with male and female all over the world.\nThe chat is fully safe and your identity is secret."
+START_TEXT = """
+Hey! With me  you can chat with male and female all over the world.\n
+
+<b>Commands</b>
+/newchat - to start chat.
+/leavechat - to end chat.
+/setings - to settings.
+
+Please dont spam and be nice with other users.
+"""
 YOU_ARE_BANNED = "You are banned from using this bot. \nIf you think there is any error contact @RandomMode_Bot"
 MATCHED = "<b>🎉You found a partner.</b>\n"
 NOT_MATCHED = "⚠️ You are not in chat ⚠️"
 IN_CHAT = "You are already in chat"
+
 NOT_REGISTERED = "You are not registered. Please send /start."
 USER_LEAVED = "<b> Chat ended.\nType /newchat to start new one.</b>"
 PARTNER_LEAVED = "<b>Your partner left the chat. 😞</b>"

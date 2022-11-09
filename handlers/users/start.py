@@ -31,7 +31,7 @@ async def bot_start(message: types.Message):
                 await db.update_total_referral(code)
                 await db.add_user(user_id)
                 await message.answer(constant.START_TEXT, reply_markup=JOIN_BUTTON)
-                await message.answer(constant.NEWCHAT, reply_markup=keyboard_markup)
+                await message.answer(constant.WELCOME, reply_markup=keyboard_markup)
 
                 await bot.send_message(
                     BC, f"#WELCOME \n{message.from_user.full_name} joined the bot"
@@ -42,9 +42,10 @@ async def bot_start(message: types.Message):
                     print(f"LINE 40 {str(e)}")
             else:
                 await db.add_user(user_id)
+                await message.answer(constant.WELCOME, reply_markup=keyboard_markup)
                 await message.answer(constant.START_TEXT, reply_markup=JOIN_BUTTON)
 
-                await message.answer(constant.NEWCHAT, reply_markup=keyboard_markup)
+               
                 await bot.send_message(
                     BC, f"#WELCOME \n{message.from_user.full_name} joined the bot"
                 )

@@ -7,11 +7,17 @@ from aiogram import types
 
 DONATE_US_URL = "https://paypal.me/theRishuPandey"
 BOT_SUPPORT_URL = "https://t.me/RandomMode_Bot"
+IND0_CHAT_URL ="https://t.me/RandomModEnglishChat"
+ENG_CHAT_URL =  "https://t.me/RandomModeGroup"
 
 
 JOIN_BUTTON = InlineKeyboardMarkup(
     inline_keyboard=[
         [InlineKeyboardButton(text="📢  Join our channel", url=TG_CHANNEL)],
+        [
+            InlineKeyboardButton(text="Indo Group", url= IND0_CHAT_URL),
+            InlineKeyboardButton(text="English Group", url=ENG_CHAT_URL),
+        ],
         [
             InlineKeyboardButton(text="Ask support", url=BOT_SUPPORT_URL),
             InlineKeyboardButton(text="Donate us", url=DONATE_US_URL),
