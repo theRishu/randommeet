@@ -12,4 +12,7 @@ DATABASE_URL = "postgresql+asyncpg://postgres:1234@localhost/postgres"
 TG_CHANNEL = "t.me/stupid"
 
 BROADCAST_CHANNEL = "-1001864616211"
-1482537711:AAFbFjvkcAjo4fJ41R4Ek4GmctzBXwR7Uwg
+
+
+#1482537711:AAFbFjvkcAjo4fJ41R4Ek4GmctzBXwR7Uwg
+# realbot 1482537711:AAFbFjvkcAjo4fJ41R4Ek4GmctzBXwR7Uwg
