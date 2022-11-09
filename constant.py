@@ -20,7 +20,7 @@ Hey! With me  you can chat with male and female all over the world.\n
 <b>Commands</b>
 /newchat - to start chat.
 /leavechat - to end chat.
-/setings - to settings.
+/settings - to settings.
 
 Please dont spam and be nice with other users. If you have any doubt contact @RandomMode_Bot
 """
