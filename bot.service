@@ -13,4 +13,4 @@ RestartSec=30
 
 
 [Install]
-WantedBy=deafault.target
+WantedBy=muti-user.target
