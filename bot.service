@@ -1,12 +1,16 @@
 [Unit]
-Description=Bot Starter
-After=network.target
+Description=Bot Starter.
+After=muti-user.target
 
 [Service]
-Restart=always
-ExecStart=/bin/bash -c 'cd /home/root/randommeet && python3 app.py'
+Type=simple
+Restart=on-failure
+WorkingDirectory=/root/randommeet
+ExecStart=/usr/bin/python3 /root/randommeet/app.py
+User=root
+RestartSec=30
 
 
 
 [Install]
-WantedBy=default.target
+WantedBy=deafault.target
