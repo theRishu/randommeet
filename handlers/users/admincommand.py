@@ -47,6 +47,25 @@ async def ban(message: types.Message):
     await db.update_state(id, 'D')
     await bot.send_message(id, f'You were banned from using bot cause of {reason1} {reason2} and disconnected  from chat .\nIf you think you were banned by mistake contact @RandomMode_bot', reply_markup=types.ReplyKeyboardRemove())
     await message.answer("Banned Successfully.")
+    
+    
+    
+    
+
+@dp.message_handler(Command("cban"))
+async def ban(message: types.Message):
+    user_id = message.from_user.id
+
+    user = await db.select_user(user_id)
+
+    await db.update_after_leavechat(user.partner_id, user.user_id)
+    try:
+        await bot.send_message(user_id, constant.PARTNER_LEAVED, reply_markup=keyboard_markup)
+    except Exception as e:
+        print(str(e))
+    await db.update_state(user.partner_id,'D')
+    await bot.send_message(id, f'You were banned from using bot cause of {reason1} {reason2} and disconnected  from chat.\nIf you think you were banned by mistake contact @RandomMode_bot', reply_markup=types.ReplyKeyboardRemove())
+    await message.answer("Banned Successfully.")
 
 
 @dp.message_handler(Command("unban"))
