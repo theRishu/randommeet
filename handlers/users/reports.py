@@ -14,6 +14,7 @@ FC = '-846814382'
 
 @dp.message_handler(commands="report"):
 async def report(message: types.Message):
+    pass
     
 
     
