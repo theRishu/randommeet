@@ -6,7 +6,7 @@ from utils.db_api.db import async_session
 
 async def find_match_user(user_id):
     user = await db.select_user(user_id)
-    await asyncio.sleep(2)
+    
     stmt = select(User).where(User.state == "B" and User.partner_id == None)
 
     userlist = []
