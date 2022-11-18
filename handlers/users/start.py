@@ -115,11 +115,11 @@ async def another_chatnewchat(message: types.Message):
                 await db.delete_user(found_user)
                 await bot.send_message(BC, f"Error in next chat {str(e)}")
 
-    if user.state == "C":
+    elif user.state == "C":
         await message.answer(constant.IN_CHAT, reply_markup=in_chat_markup)
 
     else:
-        pass
+        await message.answer(constant.YOU_ARE_BANNED)
 
 @dp.message_handler(text=(constant.LC))
 @dp.message_handler(Command("leavechat"))
