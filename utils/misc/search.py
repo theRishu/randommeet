@@ -9,7 +9,7 @@ async def find_match_user(user_id):
     
     stmt = select(User).where(User.state == "B" and User.partner_id == None)
 
-    userlist = []
+    userlist = {}
     async with async_session() as session:
         result = await session.execute(stmt)
         userlist = [user.user_id for user in result.scalars()]
