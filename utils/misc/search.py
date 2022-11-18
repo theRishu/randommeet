@@ -40,20 +40,7 @@ async def find_match_user(user_id):
                     else:
                         return match.user_id
 
-        if user.gender == "F":
-            if user.is_vip == True:
-                if (
-                    user.partner_gender == match.gender
-                    and user.user_id != match.user_id
-                    and user.last_partner_id != match.user_id
-                ):
-                    return match.user_id
-                else:
-                    if (
-                        user.user_id != match.user_id
-                        and user.last_partner_id != match.user_id
-                    ):
-                        return match.user_id
+        
 
             else:
                 if (
