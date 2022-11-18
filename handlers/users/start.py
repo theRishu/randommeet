@@ -119,7 +119,7 @@ async def another_chatnewchat(message: types.Message):
         await message.answer(constant.IN_CHAT, reply_markup=in_chat_markup)
 
     else:
-        await message.answer("There is something wrong contact @RandomMode_bot")
+        pass
 
 @dp.message_handler(text=(constant.LC))
 @dp.message_handler(Command("leavechat"))
