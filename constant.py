@@ -27,9 +27,9 @@ Please dont spam and be nice with other users. If you have any doubt contact @Ra
 YOU_ARE_BANNED = "You are banned from using this bot. \nIf you think there is any error contact @RandomMode_Bot"
 MATCHED = "<b>🎉You found a partner.</b>\n"
 NOT_MATCHED = "⚠️ You are not in chat ⚠️"
-IN_CHAT = "You are already in chat"
+IN_CHAT = "You are already in chat.Press /nextchat if you want to find another partner."
 
-NOT_REGISTERED = "You are not registered. Please send /start."
+NOT_REGISTERED = "You are not registered.Just start the bot again by press /start."
 USER_LEAVED = "<b> Chat ended.\nType /newchat to start new one.</b>"
 PARTNER_LEAVED = "<b>Your partner left the chat. 😞</b>"
 WAIT_REACCEPT = "Please wait for partner to reaccept the chat"
