@@ -67,7 +67,7 @@ async def another_chatnewchat(message: types.Message):
                 await bot.send_message(BC, f"Error in next chat {str(e)}")
 
     else:
-        await message.answer(user.state)
+        pass
         """
         
         
