@@ -2,6 +2,7 @@ from utils.misc import db_commands as db
 from sqlalchemy import select
 from utils.db_api.models import User
 from utils.db_api.db import async_session
+import asyncio
 
 
 async def find_match_user(user_id):
@@ -19,6 +20,7 @@ async def find_match_user(user_id):
     for match in userlist:
         match = await db.select_user(match)
         if user.gender == "M":
+            await asyncio.sleep(5)
             if user.is_vip == True:
                 if (
                     user.partner_gender == match.gender
@@ -62,6 +64,7 @@ async def find_match_user(user_id):
                     return match.user_id
 
         else:
+            await asyncio.sleep(5)
             if user.last_partner_id != match.user_id and user.user_id != match.user_id:
                 if match.partner_gender != "NA" and match.is_vip == True:
                     pass
