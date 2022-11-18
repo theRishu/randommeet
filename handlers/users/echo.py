@@ -27,7 +27,6 @@ from utils.tod.dare import darelist
 from data.config import BROADCAST_CHANNEL as BC
 
 
-
 @dp.message_handler(content_types=ContentType.TEXT)
 async def text(message: types.Message):
 
@@ -38,26 +37,49 @@ async def text(message: types.Message):
         await message.answer(constant.NOT_REGISTERED)
         return
 
-    
-    if user.state == 'C':
+    if user.state == "C":
         match = await db.select_user(user.partner_id)
-        try:
-            await bot.send_message(match.user_id, message.text)
-        except BotBlocked:
-            await db.delete_user(match)
-        except Exception as e :
-            await bot.send_message(BC , str(e))
+        if user.partner_id == match.user_id and user.user_id == match.partner_id:
+            try:
+                if message.reply_to_message is None:
+                    await bot.send_message(user.partner_id, message.text)
+                elif message.from_user.id != message.reply_to_message.from_user.id:
+                    await bot.send_message(
+                        user.partner_id,
+                        reply_to_message_id=message.reply_to_message.message_id - 1,
+                    )
+                elif message.from_user == message.reply_to_message.from_user.id:
+                    await bot.send_message(
+                        user.partner_id,
+                        reply_to_message_id=message.reply_to_message.message_id + 1,
+                    )
+                else:
+                    print("chutiyapa")
+                    await bot.send_message(user.partner_id, message.text)
+
+                # message.from_user.id == message.reply_to_message.from_user.id:
+
+            except BotBlocked:
+                await db.update_after_leavechat(user.user_id, user.partner_id)
+                await db.update_after_leavechat(user.partner_id, user.user_id)
+                await bot.send_message(
+                    user.user_id, constant.PARTNER_LEAVED, reply_markup=keyboard_markup
+                )
+                await db.delete_user(user.partner_id)
+
+        else:
+            pass
+
     elif user.state == "A":
         await message.answer(constant.NOT_MATCHED, reply_markup=keyboard_markup)
     elif user.state == "B":
-        await message.answer(constant.NOT_MATCHED , reply_markup=stop_search)
+        await message.answer(constant.NOT_MATCHED, reply_markup=stop_search)
     elif user.state == "D":
         await message.answer(constant.YOU_ARE_BANNED)
-    elif user.state == 'L':
+    elif user.state == "L":
         await message.answer(constant.NOT_MATCHED)
 
-            
-
-
+    else:
+        pass
 
         
