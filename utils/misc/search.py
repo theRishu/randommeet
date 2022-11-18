@@ -64,7 +64,7 @@ async def find_match_user(user_id):
                     return match.user_id
 
         else:
-            await asyncio.sleep(5)
+            await asyncio.sleep(1)
             if user.last_partner_id != match.user_id and user.user_id != match.user_id:
                 if match.partner_gender != "NA" and match.is_vip == True:
                     pass
