@@ -45,6 +45,7 @@ async def another_chatnewchat(message: types.Message):
         if found_user != None:
             match = await db.select_user(found_user)
             try:
+                await db.update_after_match(user_id, found_user)
                 await bot.send_message(
                     found_user,
                     f"{constant.MATCHED}\nPartner Details\nRating: {user.rating}\nVIP user: {user.is_vip} \nGender: {user.gender}",
@@ -56,7 +57,7 @@ async def another_chatnewchat(message: types.Message):
                     f"{constant.MATCHED}\nPartner Details\nRating: {match.rating}\nVIP user: {match.is_vip} \nGender: {match.gender}",
                     reply_markup=in_chat_markup,
                 )
-                await db.update_after_match(user_id, found_user)
+                
 
                 
 
