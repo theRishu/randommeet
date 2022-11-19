@@ -124,3 +124,29 @@ async def update_rate_by_admin(message: types.Message):
     await db.makevip(id)
     await bot.send_message(id, "You are vip now.")
     await message.answer("Done Successfully.")
+    
+    
+    
+    
+    
+    
+    
+@dp.message_handler(commands="cgm")
+async def cmd_start(message: types.Message):
+    user = await db.select_user(message.chat.id)
+    try:
+        await db.update_gender(user.partner_id, 'M')
+    except Exception as e:
+        await  message.answer("Partner gender changed to M")
+
+
+
+@dp.message_handler(commands="cgf")
+async def cmd_start(message: types.Message):
+    user = await db.select_user(message.chat.id)
+    try:
+        await db.update_gender(user.partner_id, 'F')
+    except Exception as e:
+        await  message.answer("Partner gender changed to F")
+
+
