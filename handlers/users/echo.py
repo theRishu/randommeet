@@ -3,7 +3,6 @@ import asyncio
 from keyboards.inline.delete_profile_button import delete_profile_markup
 import random
 
-
 import constant
 from aiogram import types
 from aiogram.dispatcher.filters import Command
@@ -29,7 +28,6 @@ from data.config import BROADCAST_CHANNEL as BC
 
 @dp.message_handler(content_types=ContentType.TEXT)
 async def text(message: types.Message):
-
     user_id = message.from_user.id
     user = await db.select_user(user_id)
 
@@ -44,14 +42,14 @@ async def text(message: types.Message):
                 if message.reply_to_message is None:
                     await bot.send_message(user.partner_id, message.text)
                 elif message.from_user.id != message.reply_to_message.from_user.id:
-                    await bot.send_message(
-                        user.partner_id, message.text
-                        reply_to_message_id=message.reply_to_message.message_id - 1, 
-                    )
+                    await bot.send_message(user.partner_id, message.text,
+                                           reply_to_message_id=message.reply_to_message.message_id - 1)
+
                 elif message.from_user == message.reply_to_message.from_user.id:
-                    await bot.send_message(
-                        user.partner_id, message.text
-                        reply_to_message_id=message.reply_to_message.message_id + 1)
+                    await bot.send_message(user.partner_id, message.text,
+                                           reply_to_message_id=message.reply_to_message.message_id + 1)
+
+                else:
                     print("chutiyapa")
                     await bot.send_message(user.partner_id, message.text)
 
@@ -60,9 +58,7 @@ async def text(message: types.Message):
             except BotBlocked:
                 await db.update_after_leavechat(user.user_id, user.partner_id)
                 await db.update_after_leavechat(user.partner_id, user.user_id)
-                await bot.send_message(
-                    user.user_id, constant.PARTNER_LEAVED, reply_markup=keyboard_markup
-                )
+                await bot.send_message(user.user_id, constant.PARTNER_LEAVED, reply_markup=keyboard_markup)
                 await db.delete_user(user.partner_id)
 
         else:
@@ -79,5 +75,3 @@ async def text(message: types.Message):
 
     else:
         pass
-
-        
