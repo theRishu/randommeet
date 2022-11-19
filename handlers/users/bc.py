@@ -27,7 +27,7 @@ async def broadcast(message: types.Message):
         for user in result.scalars():
             try:
                 if user.state == "A":
-                    await db.update_state(user.user_id, "E")
+                    
                     await bot.send_message(
                         user.user_id, f"🤖 Bot ( @RandomMode Broadcast) :{ BROADCAST_TEXT}"
                     )
