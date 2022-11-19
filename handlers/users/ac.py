@@ -1,4 +1,3 @@
-from distutils.command.config import config
 import types
 from aiogram import types
 from loader import dp, bot
@@ -7,7 +6,7 @@ from utils.misc import db_commands as db
 from keyboards.inline.in_chat import in_chat_markup
 from utils.misc import search
 
-from keyboards.inline.start_button import JOIN_BUTTON, keyboard_markup
+from keyboards.inline.start_button import keyboard_markup
 from keyboards.inline.stop_searching import stop_search
 from data.config import BROADCAST_CHANNEL as BC
 
@@ -26,7 +25,6 @@ async def another_chatnewchat(message: types.Message):
 
         if user.partner_id != None:
             await db.update_after_leavechat(user_id, user.partner_id)
-
             try:
                 await bot.send_message(
                     user.partner_id,
@@ -39,8 +37,9 @@ async def another_chatnewchat(message: types.Message):
         await bot.send_message(
             user.user_id, constant.LEFT_WAITING, reply_markup=stop_search
         )
-        await db.update_state(user.user_id, "B")
 
+
+        await db.update_state(user.user_id, "B")
         found_user = await search.find_match_user(user_id)
 
         if found_user != None:
@@ -57,14 +56,16 @@ async def another_chatnewchat(message: types.Message):
                     f"{constant.MATCHED}\nPartner Details\nRating: {match.rating}\nVIP user: {match.is_vip} \nGender: {match.gender}",
                     reply_markup=in_chat_markup,
                 )
-
                 await db.update_after_match(user_id, found_user)
+
+                
 
             except Exception as e:
                 await db.delete_user(found_user)
                 await bot.send_message(BC, f"Error in next chat {str(e)}")
+            
 
-            return
+        return
 
     else:
         pass
