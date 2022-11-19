@@ -100,7 +100,7 @@ async def another_chatnewchat(message: types.Message):
                 await db.delete_user(found_user)
                 await bot.send_message(BC, f"Error in next chat {str(e)}")
                 
-    elif user.state = 'B':
+    elif user.state == 'B':
         await message.answer(constant.AlREADY_WAITING , reply_markup= stop_search)
 
     elif user.state == "C":
