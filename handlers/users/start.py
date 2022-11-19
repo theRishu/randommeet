@@ -73,23 +73,8 @@ async def another_chatnewchat(message: types.Message):
         await message.answer(constant.NOT_REGISTERED)
         return
 
-    if user.state in ["A", "B", "E"]:
-
-        if user.partner_id != None:
-            await db.update_after_leavechat(user_id, user.partner_id)
-
-            try:
-                await bot.send_message(
-                    user.partner_id,
-                    constant.PARTNER_LEAVED,
-                    reply_markup=keyboard_markup,
-                )
-            except Exception as e:
-                await bot.send_message(BC, str(e))
-
-        await bot.send_message(
-            user.user_id, constant.LEFT_WAITING, reply_markup=stop_search
-        )
+    if user.state =='A':
+        await bot.send_message(user.user_id, constant.WAITING, reply_markup=stop_search)
         await db.update_state(user.user_id, "B")
 
         found_user = await search.find_match_user(user_id)
@@ -114,13 +99,17 @@ async def another_chatnewchat(message: types.Message):
             except Exception as e:
                 await db.delete_user(found_user)
                 await bot.send_message(BC, f"Error in next chat {str(e)}")
+                
+    elif user.state = 'B':
+        await message.answer(constant.AlREADY_WAITING , reply_markup= stop_search)
 
     elif user.state == "C":
         await message.answer(constant.IN_CHAT, reply_markup=in_chat_markup)
 
     else:
         await message.answer(constant.YOU_ARE_BANNED)
-
+        
+        
 @dp.message_handler(text=(constant.LC))
 @dp.message_handler(Command("leavechat"))
 async def leavechat(message: types.Message):
