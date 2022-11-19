@@ -73,7 +73,7 @@ async def another_chatnewchat(message: types.Message):
         await message.answer(constant.NOT_REGISTERED)
         return
 
-    if user.state =='A':
+    if u user.state == "A" && user.state =='E':
         await bot.send_message(user.user_id, constant.WAITING, reply_markup=stop_search)
         await db.update_state(user.user_id, "B")
 
