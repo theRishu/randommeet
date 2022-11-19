@@ -45,15 +45,13 @@ async def text(message: types.Message):
                     await bot.send_message(user.partner_id, message.text)
                 elif message.from_user.id != message.reply_to_message.from_user.id:
                     await bot.send_message(
-                        user.partner_id,
-                        reply_to_message_id=message.reply_to_message.message_id - 1, message.text
+                        user.partner_id, message.text
+                        reply_to_message_id=message.reply_to_message.message_id - 1, 
                     )
                 elif message.from_user == message.reply_to_message.from_user.id:
                     await bot.send_message(
-                        user.partner_id,
-                        reply_to_message_id=message.reply_to_message.message_id + 1, message.text
-                    )
-                else:
+                        user.partner_id, message.text
+                        reply_to_message_id=message.reply_to_message.message_id + 1)
                     print("chutiyapa")
                     await bot.send_message(user.partner_id, message.text)
 
