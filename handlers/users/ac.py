@@ -15,10 +15,9 @@ from data.config import BROADCAST_CHANNEL as BC
 @dp.message_handler(commands="nextchat")
 @dp.message_handler(text=constant.AC)
 async def another_chatnewchat(message: types.Message):
-
     user_id = message.from_user.id
     user = await db.select_user(user_id)
-   
+
     if not user:
         await message.answer(constant.NOT_REGISTERED)
         return
@@ -27,7 +26,6 @@ async def another_chatnewchat(message: types.Message):
 
         if user.partner_id != None:
             await db.update_after_leavechat(user_id, user.partner_id)
-            
 
             try:
                 await bot.send_message(
@@ -65,6 +63,8 @@ async def another_chatnewchat(message: types.Message):
             except Exception as e:
                 await db.delete_user(found_user)
                 await bot.send_message(BC, f"Error in next chat {str(e)}")
+
+            return
 
     else:
         pass
