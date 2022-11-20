@@ -10,5 +10,6 @@ from . import tod
 from . import mis
 from . import ro
 from . import admincommand
+from . import vips
 
 from . import echo
