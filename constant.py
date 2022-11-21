@@ -38,7 +38,7 @@ ALREADY_REACCEPT ="You are already looking for previous partner please wait."
 AlREADY_WAITING = "You are already searching for user please wait."
 LEFT_WAITING = """
 You left the chat. 
-🔍 Waiting for user...🤞"""
+🔍 Waiting for user...🤞  \n\nWould you like to select the gender of partner and support this bot? Take a look at the /vip packages.   """
 
 
 WAITING = "<b>🔍 Waiting for user... 🤞</b>"
