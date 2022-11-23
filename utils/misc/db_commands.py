@@ -1,5 +1,5 @@
 from sqlalchemy import update, select
-from sqlalchemy.sql.expression import delete, desc
+from sqlalchemy.sql.expression import delete
 
 
 from utils.db_api.models import User
@@ -21,13 +21,27 @@ async def add_user(user_id):
 
 
 async def update_state(user_id, state_data):
-
     stmt = update(User).where(User.user_id == user_id).values(state=state_data)
-
     async with async_session() as session:
         await session.execute(stmt)
         await session.commit()
         await session.close()
+
+async def allow_mperm(user_id):
+    stmt = update(User).where(User.user_id == user_id).values(mperm=True)
+    async with async_session() as session:
+        await session.execute(stmt)
+        await session.commit()
+        await session.close()
+
+async def disallow_mperm(user_id):
+
+    stmt = update(User).where(User.user_id == user_id).values(mperm=False)
+    async with async_session() as session:
+        await session.execute(stmt)
+        await session.commit()
+        await session.close()
+
 
 
 async def update_total_referral(code):

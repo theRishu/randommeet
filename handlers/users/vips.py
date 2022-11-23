@@ -1,18 +1,11 @@
 from aiogram import types
-from sqlalchemy import select
-from loader import dp, bot
-from utils.db_api.db import async_session
-from utils.db_api.models import User
+from loader import dp
 from utils.misc import db_commands as db
-from aiogram.utils.exceptions import BotBlocked
-from keyboards.inline.setting_button.self_gender import gender_keyboard
 
-from aiogram.types import CallbackQuery, ContentType, Message, reply_keyboard
 from aiogram.types.inline_keyboard import InlineKeyboardButton, InlineKeyboardMarkup
 
 import constant
 from aiogram.types import InlineKeyboardMarkup, InlineKeyboardButton
-from aiogram.types.reply_keyboard import KeyboardButton, ReplyKeyboardMarkup
 
 
 
@@ -58,3 +51,25 @@ Your link: https://t.me/Randommeetbot?start={user_id}
     	SHARE = InlineKeyboardMarkup(resize_keyboard=True).add(studyboi)
     	await message.answer(MSG , reply_markup=SHARE , disable_web_page_preview=True)
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+@dp.message_handler(commands="mperm")
+async def another_ewchat(message: types.Message):
+    user_id = message.from_user.id
+    user = await db.select_user(user_id)
+
+    await message.answer(user.mperm)

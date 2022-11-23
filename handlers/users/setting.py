@@ -1,29 +1,16 @@
-import asyncio
 
-from aiogram.types.inline_keyboard import InlineKeyboardButton, InlineKeyboardMarkup
-from keyboards.inline.tod_markup import tod_markup
-from keyboards.inline.delete_profile_button import delete_profile_markup
-import random
 
 
 import constant
 from aiogram import types
 from aiogram.dispatcher.filters import Command
-from aiogram.dispatcher.filters.builtin import CommandHelp, CommandStart
-from aiogram.types import CallbackQuery, ContentType, Message, reply_keyboard
-from aiogram.types.message import ParseMode
-from aiogram.utils.exceptions import BotBlocked
-from keyboards.inline.help_button import back_keyboard, choice
-from keyboards.inline.newchat_button import NEWCHAT_BUTTON
+from aiogram.types import CallbackQuery
 from keyboards.inline.setting_button.bts import bts_keyboard
 from keyboards.inline.setting_button.partner_gender import partgen_keyboard
 from keyboards.inline.setting_button.self_gender import gender_keyboard
 from keyboards.inline.setting_button.setting_choice import setting_choice
-from keyboards.inline.start_button import JOIN_BUTTON, keyboard_markup
-from keyboards.inline.in_chat import in_chat_markup
 from loader import bot, dp
 
-from utils.db_api.models import User
 from utils.misc import db_commands as db
 
 
@@ -165,3 +152,49 @@ For buying VIP contact @RandomMode_bot
             disable_web_page_preview=True,
         )
         await call.message.edit_reply_markup(reply_markup=bts_keyboard)
+
+
+
+
+@dp.callback_query_handler(text_contains="allow")
+async def update_mperm_data(call: CallbackQuery):
+    user_id = call.from_user.id
+    user =  await db.select_user(user_id)
+    if user.state =='C':
+        await call.message.edit_text("You allowed partner to send media.If you want to block media press /disallow")
+        await db.allow_mperm(user_id)
+        await bot.send_message(user.partner_id , "Your partner allowed to send you media please resend")
+
+    else:
+        await call.message.edit_text("You are not in chat ")
+
+
+@dp.callback_query_handler(text_contains="deny")
+async def upda344te_mperm_data(call: CallbackQuery):
+    user_id = call.from_user.id
+    user =  await db.select_user(user_id)
+    if user.state =='C':
+        await call.message.edit_text("You disallowed partner to send media.")
+        await db.disallow_mperm(user_id)
+
+    else:
+        await call.message.edit_text("You are not in chat ")
+
+        
+
+
+@dp.message_handler(commands="disallow")
+async def another_r5ewchat(message: types.Message):
+    user_id = message.from_user.id
+    user =  await db.select_user(user_id)
+
+    if user.state =='C':
+        await message.answer("You disallowed partner to send media.")
+        await db.disallow_mperm(user_id)
+        await bot.send_message(user.partner_id , "You cant send media to your partner now.")
+
+    else:
+        await message.answer("You are not in chat ")
+
+        
+

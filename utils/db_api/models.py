@@ -20,4 +20,4 @@ class User(Base):
     partner_id = Column(BigInteger)
     last_partner_id = Column(BigInteger)
     ro_id  = Column(BigInteger)
-
+    mperm  = Column(Boolean,  default=False)

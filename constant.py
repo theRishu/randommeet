@@ -40,7 +40,7 @@ LEFT_WAITING = """
 You left the chat. 
 🔍 Waiting for user...🤞  \n\nWould you like to select the gender of partner and support this bot? Take a look at the /vip packages.   """
 
-
+ASK_FOR_PERMISSION= 'Your partner want to send to media. Do you want to allow them to send you media?'
 WAITING = "<b>🔍 Waiting for user... 🤞</b>"
 FEEDBACK = "Send me message at @RandomMode_Bot for feedback"
 NEWCHAT = "<b> Press /newchat  or click on newchat button to start newchat.</b>"
