@@ -1,9 +1,9 @@
 from aiogram.types import ContentType
 from loader import dp, bot
 from aiogram import types
-from utils.misc import db_commands as db
 import constant
 from keyboards.inline.ask_for_media import ask_for_perm
+from utils.misc import db_commands as db
 
 @dp.message_handler(content_types=ContentType.VIDEO)
 async def video(message: types.Message):
@@ -21,7 +21,7 @@ async def video(message: types.Message):
     elif user.state == 'C':
 
         if user.mperm == True:
-            print("I got a file")
+            
             await bot.send_video(user.partner_id, message.video.file_id, caption=message.caption)
         else:
             await message.answer("Your partner has disabled media.")
