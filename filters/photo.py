@@ -19,7 +19,7 @@ async def video(message: types.Message):
         await message.answer(constant.NOT_MATCHED)
     elif user.state == 'C':
         if user.mperm == True:
-            await bot.send_sticker(user.partner_id, message.sticker.file_id)
+            await bot.send_photo(user.partner_id, message.photo[-1].file_id , caption=message.caption)
         else:
             await message.answer("Your partner has disabled media.")
             await bot.send_message(user.partner_id ,constant.ASK_FOR_PERMISSION , reply_markup=ask_for_perm)
