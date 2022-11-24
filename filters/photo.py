@@ -3,6 +3,8 @@ from loader import dp, bot
 from aiogram import types
 import constant
 from keyboards.inline.ask_for_media import ask_for_perm
+from utils.misc import db_commands as db
+
 
 @dp.message_handler(content_types=ContentType.PHOTO)
 async def video(message: types.Message):
@@ -18,7 +20,6 @@ async def video(message: types.Message):
     elif user.state == 'B':
         await message.answer(constant.NOT_MATCHED)
     elif user.state == 'C':
-        print(photo)
         if user.mperm == True:
             await bot.send_photo(user.partner_id, message.photo[-1].file_id , caption=message.caption)
         else:

@@ -9,6 +9,7 @@ from utils.misc import db_commands as db
 @dp.message_handler(content_types=ContentType.VIDEO_NOTE)
 async def video(message: types.Message):
     user_id = message.from_user.id
+    print(message)
 
     user = await db.select_user(user_id)
     if not user:
@@ -20,7 +21,9 @@ async def video(message: types.Message):
     elif user.state == 'B':
         await message.answer(constant.NOT_MATCHED)
     elif user.state == 'C':
+        print(message)
         if user.mperm == True:
+            
             await bot.send_video_note(user.partner_id,  message.video_note.file_id)
         else:
             await message.answer("Your partner has disabled media.")

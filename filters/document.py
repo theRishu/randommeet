@@ -21,7 +21,8 @@ async def video(message: types.Message):
         await message.answer(constant.NOT_MATCHED)
     elif user.state == 'C':
         if user.mperm == True:
-            #await bot.send_video_note(user.partner_id,  message.video_note.file_id)
+            
+            await bot.send_document(user.partner_id,  message.document.file_id)
             pass
         else:
             await message.answer("Your partner has disabled media.")

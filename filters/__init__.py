@@ -11,6 +11,7 @@ from . import sticker
 from . import location
 from . import video
 from . import voice
+from . import video_note
 
 
 
