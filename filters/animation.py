@@ -20,6 +20,7 @@ async def video(message: types.Message):
     elif user.state == 'B':
         await message.answer(constant.NOT_MATCHED)
     elif user.state == 'C':
+        print("animation")
         if user.mperm == True:
             await bot.send_animation(user.partner_id, message.animation.file_id)
         else:

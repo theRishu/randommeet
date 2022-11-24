@@ -63,12 +63,12 @@ async def update_after_leavechat(user_id, partner_id):
     stmt1 = (
         update(User)
         .where(User.user_id == user_id)
-        .values(partner_id=None, state="A", last_partner_id=partner_id)
+        .values(partner_id=None, state="A", last_partner_id=partner_id , mperm=False)
     )
     stmt2 = (
         update(User)
         .where(User.user_id == partner_id)
-        .values(partner_id=None, state="A", last_partner_id=user_id)
+        .values(partner_id=None, state="A", last_partner_id=user_id,mperm=False)
     )
     print(f"{user_id} && {partner_id} left the chat.")
     async with async_session() as session:

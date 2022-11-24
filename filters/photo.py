@@ -4,7 +4,7 @@ from aiogram import types
 import constant
 from keyboards.inline.ask_for_media import ask_for_perm
 
-@dp.message_handler(content_types=ContentType.VIDEO)
+@dp.message_handler(content_types=ContentType.PHOTO)
 async def video(message: types.Message):
     user_id = message.from_user.id
 
@@ -18,6 +18,7 @@ async def video(message: types.Message):
     elif user.state == 'B':
         await message.answer(constant.NOT_MATCHED)
     elif user.state == 'C':
+        print(photo)
         if user.mperm == True:
             await bot.send_photo(user.partner_id, message.photo[-1].file_id , caption=message.caption)
         else:
