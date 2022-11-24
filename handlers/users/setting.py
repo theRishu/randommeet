@@ -162,7 +162,7 @@ async def update_mperm_data(call: CallbackQuery):
     user =  await db.select_user(user_id)
     if user.state =='C':
         await call.message.edit_text("You allowed partner to send media.If you want to block media press /disallow")
-        await db.allow_mperm(user_id.partner_id)
+        await db.allow_mperm(user.partner_id)
         await bot.send_message(user.partner_id , "Your partner allowed to send you media please resend")
 
     else:
@@ -175,7 +175,7 @@ async def upda344te_mperm_data(call: CallbackQuery):
     user =  await db.select_user(user_id)
     if user.state =='C':
         await call.message.edit_text("You disallowed partner to send media.")
-        await db.disallow_mperm(user_id.partner_id)
+        await db.disallow_mperm(user.partner_id)
 
     else:
         await call.message.edit_text("You are not in chat ")
@@ -190,7 +190,7 @@ async def another_r5ewchat(message: types.Message):
 
     if user.state =='C':
         await message.answer("You disallowed partner to send media.")
-        await db.disallow_mperm(user_id.partner_id)
+        await db.disallow_mperm(user.partner_id)
         await bot.send_message(user.partner_id , "You cant send media to your partner now.")
 
     else:
