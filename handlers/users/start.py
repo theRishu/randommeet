@@ -32,7 +32,7 @@ async def bot_start(message: types.Message):
                 await message.answer(constant.WELCOME, reply_markup=keyboard_markup)
 
                 await bot.send_message(
-                    BC, f"#WELCOME \nName {message.from_user.full_name} \n ID : <code> {user_id} </code> joined the bot"
+                    BC, f"#WELCOME \nName: {message.from_user.full_name} \n ID : <code>{user_id} </code>"
                 )
                 try:
                     await bot.send_message(code, constant.JOINED_FROM_LINK)
@@ -44,7 +44,7 @@ async def bot_start(message: types.Message):
                 await message.answer(constant.START_TEXT, )
 
                 await bot.send_message(
-                    BC, f"#WELCOME \nName {message.from_user.full_name} \nID : <code> {user_id} </code> joined the bot"
+                    BC, f"#WELCOME \nName: {message.from_user.full_name} \nID : <code>{user_id} </code>"
                 )
         else:
             if result.state == "A":
