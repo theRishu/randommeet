@@ -44,7 +44,7 @@ async def bot_start(message: types.Message):
                 await message.answer(constant.START_TEXT, )
 
                 await bot.send_message(
-                    BC, f"#WELCOME \nName: {message.from_user.full_name} \nID : <code>{user_id} </code>"
+                    BC, f"#WELCOME \nName : {message.from_user.full_name} \nID : <code>{user_id} </code>"
                 )
         else:
             if result.state == "A":
