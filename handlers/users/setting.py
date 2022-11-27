@@ -196,5 +196,19 @@ async def another_r5ewchat(message: types.Message):
     else:
         await message.answer("You are not in chat ")
 
+
+@dp.message_handler(commands="allow")
+async def anothdder_r5ewchat(message: types.Message):
+    user_id = message.from_user.id
+    user =  await db.select_user(user_id)
+
+    if user.state =='C':
+        await message.answer("You disallowed partner to send media.")
+        await db.allow_mperm(user.partner_id)
+        
+
+    else:
+        await message.answer("You are not in chat ")
+
         
 
