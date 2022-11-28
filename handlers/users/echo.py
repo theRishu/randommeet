@@ -26,6 +26,7 @@ from utils.tod.dare import darelist
 from data.config import BROADCAST_CHANNEL as BC
 
 
+
 @dp.message_handler(content_types=ContentType.TEXT)
 async def text(message: types.Message):
     user_id = message.from_user.id
@@ -39,6 +40,7 @@ async def text(message: types.Message):
         match = await db.select_user(user.partner_id)
         if user.partner_id == match.user_id and user.user_id == match.partner_id:
             try:
+
                 if message.reply_to_message is None:
                     await bot.send_message(user.partner_id, message.text)
                 elif message.from_user.id != message.reply_to_message.from_user.id:

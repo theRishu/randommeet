@@ -15,7 +15,7 @@ from keyboards.inline.in_chat import in_chat_markup
 
 from utils.misc import search
 from data.config import BROADCAST_CHANNEL as BC
-
+from handlers.users.bc import BUTTON , check
 
 @dp.message_handler(CommandStart())
 async def bot_start(message: types.Message):
@@ -70,6 +70,9 @@ async def new_chat(message: types.Message):
         return
 
     if user.state in ["A", "E"]:
+        if await check(user.user_id) == False:
+                await bot.send_message(user.user_id , "Look like you had not joined the channel.Please join our official channel." , reply_markup = BUTTON )
+                
         await bot.send_message(user.user_id, constant.WAITING, reply_markup=stop_search)
         await db.update_state(user.user_id, "B")
 
