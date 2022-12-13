@@ -53,7 +53,7 @@ async def broadcast(message: types.Message):
                 if user.state == "A":
                     
                     await bot.send_message(
-                        user.user_id, f"🤖 Bot ( @RandomMode Broadcast) :{ BROADCAST_TEXT}"
+                      user.user_id, f"🤖 Bot ( @RandomMode Broadcast) :{ BROADCAST_TEXT}"
                     )
                 elif user.state == "B" or "C":
                     await bot.send_message(
@@ -64,17 +64,25 @@ async def broadcast(message: types.Message):
                         user.user_id, f"🤖 Bot ( @RandomMode Broadcast) :{ BROADCAST_TEXT}"
                     )
                 elif user.state == "E":
-                    await db.delete_user(user.user_id)
+                	await bot.send_message(
+                        user.user_id, f"🤖 Bot ( @RandomMode Broadcast) :{ BROADCAST_TEXT}"
+                    )
+                	
+                    #await db.delete_user(user.user_id)
 
                 else:
-                    pass
+                	await bot.send_message(
+                        user.user_id, f"🤖 Bot ( @RandomMode Broadcast) :{ BROADCAST_TEXT}"
+                    )
+                    
 
             except BotBlocked:
                 await bot.send_message(1460123566, "Bot Blocked")
-                await db.delete_user(user.user_id)
+                #await db.delete_user(user.user_id)
             except Exception as e:
                 # await db.delete_user(user.user_id)
-                await db.delete_user(user.user_id)
+                #await db.delete_user(user.user_id)
+                pass
 
         await message.answer("Broadcast completed:")
 
@@ -133,4 +141,3 @@ async def broadcast(message: types.Message):
                 pass
         await message.answer('Joinchannel Broadcast Completed.')
         
-
