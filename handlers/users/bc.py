@@ -141,3 +141,29 @@ async def broadcast(message: types.Message):
                 pass
         await message.answer('Joinchannel Broadcast Completed.')
         
+        
+        
+        
+        
+        
+        
+        
+        
+ @dp.message_handler(commands=('revokevips'))
+async def broadcast(message: types.Message):
+
+    if message.from_user.id == 1460123566 :
+        stmt = select(User)
+        async with async_session() as session:
+            result = await session.execute(stmt)
+        for user in result.scalars():
+            if user.rating > 0:
+                await db.revokvips(user.user_id)
+                await bot.send_message(user.user_id, "Your vip status was revoked.If your are paid user please contact me in bot @Randommode_bot.")
+
+            else:
+                pass
+
+        await message.answer('Revokevips  Broadcast Completed.')
+
+        
