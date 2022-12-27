@@ -144,7 +144,7 @@ These users should never have started the bot before.
 You have to invite minimum 3 user to unlock vip.
 Your link: https://t.me/{bot_username}?start={user_id}
 2) You can buy.
-For Indian user  100 INR
+For Indian user  300 INR
 FOR International user  2.99 USD
 Duration 365 days.
 For buying VIP contact @RandomMode_bot
