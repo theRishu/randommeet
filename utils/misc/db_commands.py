@@ -229,3 +229,19 @@ async def update_rate_by_admin(user_id, rate):
         await session.execute(stmt)
         await session.commit()
         await session.close()
+        
+        
+        
+        
+async def revokvips(user_id ):
+    stmt = (
+        update(User)
+        .where(User.user_id == user_id)
+        .values(partner_gender='NA',total_referral= 0 ,  rating =0 , is_vip = False)
+        .returning(User.is_vip)
+    )
+    async with async_session() as session:
+        await session.execute(stmt)
+        await session.commit()
+        await session.close()
+
