@@ -141,15 +141,7 @@ async def broadcast(message: types.Message):
                 pass
         await message.answer('Joinchannel Broadcast Completed.')
         
-        
-        
-        
-        
-        
-        
-        
-        
- @dp.message_handler(commands=('revokevips'))
+@dp.message_handler(commands=('revokevips'))
 async def broadcast(message: types.Message):
 
     if message.from_user.id == 1460123566 :
