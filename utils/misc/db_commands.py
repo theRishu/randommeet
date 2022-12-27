@@ -215,7 +215,7 @@ async def kick_user_from_match_queue(user_id):
 
 
 async def makevip(user_id):
-    stmt = update(User).where(User.user_id == user_id).values(is_vip=True)
+    stmt = update(User).where(User.user_id == user_id).values(is_vip=True , rating =60)
     async with async_session() as session:
         await session.execute(stmt)
         await session.commit()
