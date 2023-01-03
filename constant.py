@@ -30,7 +30,7 @@ Please be respectful and don't spam. If you have any questions, contact @RandomM
 """
 
 YOU_ARE_BANNED = "Unfortunately, you are no longer able to use this bot. If you believe this is a mistake, please contact @RandomMode_Bot for assistance. Please note that violating the terms of service may result in a ban. 🤖"
-MATCHED = "Congratulations! You have been matched with a new chat partner, . 🎉"
+MATCHED = "You have a new chat partner. 🎉"
 NOT_MATCHED = "You are not currently in a chat. Use /newchat to start one. ⚠️"
 IN_CHAT = "You are already in a chat. Use /nextchat to find a new partner. 🗣"
 
@@ -64,15 +64,15 @@ NO_PREVIOUS_PARTNER = "You dont have any previous partner please you cant use th
 PARTNER_REQUESTED  = "Your partner has requested to reopen chat. Do you want to accept?"
 COMMAND_LIST = """
 Commands:
-  /newchat     Start a new chat
-  /nextchat    Start a next chat 
-  /leavechat   Leave the current chat
-  /settings    Change your settings
-  /myprofile   View your profile
-  /makemevip   Request to become VIP (if eligible)
-  /truth       Send a random truth to your partner
-  /dare        Send a random dare to your partner
-  /mix         Help choose between truth or dare
+ /newchat     Start a new chat
+ /nextchat    Start a next chat 
+ /leavechat   Leave the current chat
+ /settings    Change your settings
+ /myprofile   View your profile
+ /makemevip   Request to become VIP (if eligible)
+ /truth       Send a random truth to your partner
+ /dare        Send a random dare to your partner
+ /mix         Help choose between truth or dare
 
 """
 BOT_INFO = """
