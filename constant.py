@@ -76,7 +76,7 @@ Commands:
 
 """
 BOT_INFO = """
-Hi there! I'm English Meet Bot. You can use me to chat with people from all around the world, regardless of their gender.
+Hi there! I'm Random Meet Bot. You can use me to chat with people from all around the world, regardless of their gender.
 Don't worry, your chat is anonymous, so the people you talk to won't know who you really are.
 You can customize your preferences by using the /settings command.
 Remember, spamming and illegal activities are not allowed on our platform and may result in a ban. For more information, check out our terms of service by using the /tos command.
