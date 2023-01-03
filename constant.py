@@ -16,21 +16,41 @@ BNC = '❎ Close TOD'
 
 
 
-WELCOME = "<b> Welcome to @RandomMode </b>"
-STOP_SEARCHING = "Now, you are not searching anymore for users. Press /newchat if you change your mind."
+WELCOME = "<b>Welcome to @RandomMode!</b>"
+STOP_SEARCHING = "You are no longer searching for users. If you want to start a new chat, use the /newchat command."
 START_TEXT = """
-Hey! With me  you can chat with male and female all over the world.\n
-<b>Commands</b>
-/newchat - to start chat.
-/leavechat - to end chat.
-/settings - to settings.
+Welcome to @RandomMode! With me, you can chat with people of all genders from around the world.
 
-Please dont spam and be nice with other users. If you have any doubt contact @RandomMode_Bot
+<b>Commands:</b>
+/newchat - Start a new chat
+/leavechat - End the current chat
+/settings - Change your settings
+
+Please be respectful and don't spam. If you have any questions, contact @RandomMode_Bot.
 """
+
+
+
 YOU_ARE_BANNED = "You are banned from using this bot. \nIf you think there is any error contact @RandomMode_Bot"
 MATCHED = "<b>🎉You found a partner.</b>\n"
 NOT_MATCHED = "⚠️ You are not in chat ⚠️"
 IN_CHAT = "You are already in chat.Press /nextchat if you want to find another partner."
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 NOT_REGISTERED = "You are not registered.Just start the bot again by pressing /start."
 USER_LEAVED = "<b> Chat ended.\nType /newchat to start new one.</b> \n\nWould you like to select the gender of partner and support this bot? Take a look at the /vip packages."
