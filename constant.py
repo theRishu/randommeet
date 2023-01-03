@@ -63,29 +63,35 @@ LEFT_WAITING = """
 You left the chat. 
 🔍 Waiting for user...🤞  \n\nWould you like to select the gender of partner and support this bot? Take a look at the /vip packages.   """
 
-ASK_FOR_PERMISSION= 'Your partner want to send to media. Do you want to allow them to send you media?'
-WAITING = "<b>🔍 Waiting for user... 🤞</b>"
-FEEDBACK = "Send me message at @RandomMode_Bot for feedback"
-NEWCHAT = "<b> Press /newchat  or click on newchat button to start newchat.</b>"
-JOINED_FROM_LINK = "Some one joined from your link."
-DELETEPROFILETEXT = "You wanna delete your profile."
+
+ASK_FOR_PERMISSION = '📤 Your partner wants to send media. Do you want to allow them to send you media?'
+WAITING = "<b>🔍 Waiting for a user... 🤞</b>"
+FEEDBACK = "💬 Send me a message at @RandomMode_Bot for feedback."
+NEWCHAT = "<b>💬 Press /newchat or click on the 'New Chat' button to start a new chat.</b>"
+JOINED_FROM_LINK = "🔗 Someone joined from your invite link."
+DELETEPROFILETEXT = "❌ Do you want to delete your profile?"
+
+
+
+
+
+
 SHARE_LINK = "Invite 3 people who had never started this bot and you will get V.I.P. benefits."
 L_WANT_TO_CHAT = "Hello "
 NO_PREVIOUS_PARTNER = "You dont have any previous partner please you cant use this feature now."
 PARTNER_REQUESTED  = "Your partner has requested to reopen chat. Do you want to accept?"
 COMMAND_LIST = """
-Tops Commands
-/newchat - start a new chat
-/leavechat - leave a chat
-/settings - set your settings
-/myprofile - check your profile
-Other Commands
-/topratings - show to top 5 ratings
-/rate - give rating to your partner
-/makemevip  - make you VIP if you are eligible
-/truth - send random truth to partner
-/dare - send random dare to partner
-/mix - help to select from truth or dare
+Commands:
+  /newchat     Start a new chat
+  /nextchat    Start a next chat 
+  /leavechat   Leave the current chat
+  /settings    Change your settings
+  /myprofile   View your profile
+  /makemevip   Request to become VIP (if eligible)
+  /truth       Send a random truth to your partner
+  /dare        Send a random dare to your partner
+  /mix         Help choose between truth or dare
+
 """
 BOT_INFO = """
 I am English Meet Bot. With me you can chat with male and female all over the world.
