@@ -37,7 +37,7 @@ IN_CHAT = "You are already in a chat. Use /nextchat to find a new partner. 🗣"
 
 NOT_REGISTERED = "You are not registered.Just start the bot again by pressing /start."
 USER_LEAVED = "<b> Chat ended.\nType /newchat to start new one.</b> \n\nWould you like to select the gender of partner and support this bot? Take a look at the /vip packages."
-PARTNER_LEFT = "Your partner has left the chat. 😢"
+PARTNER_LEAVED= "Your partner has left the chat. 😢"
 WAIT_REACCEPT = "Please wait for partner to reaccept the chat"
 CANT_SEND_REACCEPT_REQUEST = "You are already in chat to send reaccept request you need to end this chat first."
 ALREADY_REACCEPT ="You are already looking for previous partner please wait."
