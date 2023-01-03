@@ -1,17 +1,20 @@
-NC = '•New Chat ✅•'
-ST = '•Settings ⚙️•'
-HI = '•Help & Info ❓•'
-SS = '•Stop Searching 🔍•'
-LC = '•Leave Chat ❌•'
-AC = '•Another User⏭ •'
-TOD = '•Play•'
-T = 'Truth'
-D = 'Dare'
-M = 'Mix'
-CR = '•Close•'
-DPYES = 'Delete my profile'
-DPNO = 'Dont delete my profile'
-BNC = 'Close this TOD'
+
+NC = '💬 New chat ✅'
+ST = '⚙️ Settings'
+HI = '❓ Help'
+SS = '🔍 Stop search'
+LC = '❌ End chat'
+AC = '⏭ New user'
+TOD = '🎮 Play TOD'
+T = '🔍 Send truth'
+D = '🎢 Send dare'
+M = '🎲 Mix'
+CR = '❎ Close'
+DPYES = '🗑 Delete profile'
+DPNO = '🗑 Keep profile'
+BNC = '❎ Close TOD'
+
+
 
 WELCOME = "<b> Welcome to @RandomMode </b>"
 STOP_SEARCHING = "Now, you are not searching anymore for users. Press /newchat if you change your mind."
